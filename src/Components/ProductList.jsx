@@ -23,7 +23,7 @@ const ProductList = () => {
         <h2 className="product-list-title">Products</h2>
         <ul className="product-list-items">
             {products.map(product => (
-                <li key={product.id} className="product-lsit-item">
+                <li key={product.id} className="product-list-item">
                 <span>{product.name} - ${product.price}</span>
                 <button
                     className={`add-to-cart-btn ${disabledProducts.includes(product.id) ? 'disabled' : ''}`}

@@ -6,7 +6,7 @@ import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuanti
 const ShoppingCart = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart.cartItems);
-    const totalAmount = cartItems.reduce((tatl, item) => total + item.price * item.quantity, 0);
+    const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
     const handleRemoveItem = itemId => {
         dispatch(removeItemFromCart(itemId));
@@ -35,7 +35,7 @@ const ShoppingCart = () => {
                 <div className="quantity-controls">
                     <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
                     <span> {item.quantity}</span>
-                    <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(itemd.id)}>+</button> 
+                    <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button> 
                 </div>
                 <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
             </li>
